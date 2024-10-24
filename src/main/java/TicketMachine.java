@@ -74,8 +74,16 @@ public class TicketMachine {
 
     public Integer getRefund(){
 
-        refund = balance - price;
+       /* if (balance >= price){
+            refund = balance - price;
+            return refund;
+        }
+        else{
+            return 0;
+        }*/
 
+        balance = getBalance();
+        refund = balance - price;
         return refund;
 
     }
@@ -97,32 +105,33 @@ public class TicketMachine {
         // Update the total collected with the balance.
         total = total + balance;
         // Clear the balance.
-        balance = 0;
+        //balance = 0;
 
         return "Ticket price: " + price + " cents. " + "Your total is " + total + ".";
     }
     
     public static void main(String[] args){
         TicketMachine machine1 = new TicketMachine(40);
+        //machine1.balance = machine1.price;
         System.out.println("Ticket price is: " + machine1.getPrice());
         System.out.println("Money Inserted: " + machine1.insertMoney(100));
         System.out.println("Your Balance is: " + machine1.getBalance());
         System.out.println(machine1.printTicket());
         //0 is returned if we check the machine’s balance after it has printed a ticket
-        System.out.println("Your balance is: " + machine1.getBalance());
+        System.out.println("Your balance is(inserted money): " + machine1.getBalance());
+        System.out.println("Your refund is: " + machine1.getRefund());
+        System.out.println("\t");
+
 
         TicketMachine machine2 = new TicketMachine(68);
+        //machine2.balance = machine2.price;
         System.out.println("Ticket price is: " + machine2.getPrice());
         System.out.println("Money Inserted: " + machine2.insertMoney(100));
         System.out.println("Your Balance is: " + machine2.getBalance());
         System.out.println(machine2.printTicket());
-        //0 is returned if we check the machine’s balance after it has printed a ticket
-        System.out.println("Your balance is: " + machine1.getBalance());
 
-        System.out.print("Your refund is: " + machine1.getRefund());
-
-
-
+        System.out.println("Your balance(inserted money) is: " + machine2.getBalance());
+        System.out.println("Your refund is: " + machine2.getRefund());
 
     }
 
