@@ -1,6 +1,6 @@
 # NaiveTicket
 
-The seconf Objects Lab:
+The second Objects Lab:
 
 Work through all these exercises. You edit this file with your answers for these exercises.
 
@@ -14,6 +14,7 @@ Work through all these exercises. You edit this file with your answers for these
 
 ### Exercise 2.2
 * What value is returned if you check the machine’s balance after it has printed a ticket?
+*
 
 ### Exercise 2.3
 * Experiment with inserting different amounts of money before printing tickets.
